@@ -1,0 +1,125 @@
+/* #timetable {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+} */
+
+#timetable {
+
+  --width: 80vw;
+
+  width: var(--width);
+  margin-left: 10vw;
+  display: grid;
+  grid-template-rows: auto repeat(10, 1fr);
+}
+
+#timetable .labels {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  /* text-align: center; */
+  grid-gap: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#timetable .day {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr);
+  /* text-align: center; */
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+#timetable .day .period {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
+  transition: background-color 0.1s;
+  overflow: hidden;
+}
+
+#timetable .day .period:hover {
+  background-color: #4CAEE3;
+}
+
+#timetable .day .period div {
+  background-color: #eeeeeeee;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#timetable .day .period div:last-of-type {
+  margin-bottom: 0;
+}
+
+#timetable .day .period .periodLabel {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #bbb;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  display: none;
+}
+
+#timetable .day .period p {
+  margin: 0;
+  padding: 0;
+}
+
+#timetable .day .period p span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#timetable .Free {
+  color: #4CAEE3;
+}
+
+#timetable .Study {
+  color: #68e34c;
+}
+
+#timetable .PE {
+  color: #e34c4c;
+}
+
+#timetable {
+  margin-bottom: 10vh;
+}
+
+#timetable .dayName, #timetable .labels p {
+  text-transform: uppercase;
+  color: #999;
+  letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 870px) {
+
+  #timetable {
+    grid-template-rows: none;
+  }
+
+  #timetable .day {
+    display: block;
+  }
+
+  #timetable .labels {
+    display: none;
+  }
+
+  #timetable .day .period {
+    margin-bottom: 10px;
+  }
+
+
+  #timetable .dayName {
+    font-size: 1.3rem;
+  }
+
+  #timetable .day .period .periodLabel {
+    display: block;
+  }
+}
